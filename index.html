@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>おみくじ</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            flex-direction: column; /* ボタンと結果を縦に配置 */
+            background-color: rgb(255, 205, 246)
+        }
+
+        #yearText {
+            font-size: 36px; /* 2024の文字サイズを大きくする */
+            margin-bottom: 10px; /* 2024の下に少し余白を追加 */
+        }
+
+        button {
+            margin-bottom: 20px; /* ボタンの下に余白を追加 */
+            padding: 15px 30px; /* パディングを増やしてボタンを大きくする */
+            font-size: 20px; /* ボタンの文字サイズを大きくする */
+            cursor: pointer;
+            background-color: rgb(234, 103, 205); /* 背景色をピンクにする */
+            border: none; /* ボーダーをなくす */
+            color: white; /* 文字色を白にする */
+        }
+
+        #result {
+            font-size: 30px; /* 結果のテキストを少し大きく */
+        }
+    </style>
+</head>
+<body>
+
+<div id="yearText">2024の運勢は！！</div>
+<button id="omikujiButton" onclick="drawOmikuji()">おみくじを引く</button>
+<p id="result"></p>
+
+<script>
+    function drawOmikuji() {
+        var omikujiResults = ["大吉", "中吉", "小吉", "吉", "末吉", "凶", "大凶"];
+        var randomIndex = Math.floor(Math.random() * omikujiResults.length);
+        var result = omikujiResults[randomIndex];
+
+        // 結果を表示
+        document.getElementById("result").innerText = "おみくじの結果: " + result;
+    }
+</script>
+
+</body>
+</html>
